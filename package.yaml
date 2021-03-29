@@ -1,0 +1,50 @@
+name:                haskell-kafka
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/jtonic/haskell-kafka#readme
+license:             BSD3
+author:              Antonel-Ernest Pazargic
+maintainer:          antonel.pazargic@gmail.com
+copyright:           2021 Antonel-Ernest Pazargic
+category:            Web
+extra-source-files:
+- README.md
+
+dependencies:
+- base >= 4.7 && < 5
+- text
+- vector
+- string-interpolate
+- hw-kafka-client
+
+# The library contains all of our application code.
+# The executable defined below is just a thin wrapper.
+library:
+  source-dirs: src
+
+# Runnable executable for our application
+executables:
+  haskell-kafka:
+    source-dirs: app
+    main: Main.hs
+    dependencies:
+    - haskell-kafka
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
+
+# Test suite
+tests:
+  haskell-kafka-test:
+    source-dirs: test
+    main: Main.hs
+    dependencies:
+    - haskell-kafka
+    - tasty
+    - tasty-hspec
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
