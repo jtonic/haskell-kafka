@@ -5,7 +5,6 @@ import qualified Test.Tasty
 -- Hspec is one of the providers for Tasty. It provides a nice syntax for
 -- writing tests. Its website has more info: <https://hspec.github.io>.
 import Test.Tasty.Hspec
-import Lib
 
 main :: IO ()
 main = do
@@ -15,4 +14,4 @@ main = do
 spec :: Spec
 spec = parallel $ do
     it "Sum of 1 and 1 is 2" $ do
-        sum' 1 1 `shouldBe` 2
+        1 + 1 `shouldBe` 2
