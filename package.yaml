@@ -14,9 +14,13 @@ extra-source-files:
 dependencies:
 - base >= 4.7 && < 5
 - text
+- transformers
+- mtl
 - vector
 - string-interpolate
 - hw-kafka-client
+- hw-kafka-avro
+- avro
 - bytestring
 # The library contains all of our application code.
 # The executable defined below is just a thin wrapper.

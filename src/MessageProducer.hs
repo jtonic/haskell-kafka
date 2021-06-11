@@ -61,14 +61,6 @@ sendMessages prod = do
   msg3 <- getLine
   err3 <- produceMessage prod (mkMessage (Just "key3") (Just $ pack msg3))
 
-  -- errs <- produceMessageBatch prod
-  --           [ mkMessage (Just "b-1") (Just "batch-1")
-  --           , mkMessage (Just "b-2") (Just "batch-2")
-  --           , mkMessage Nothing      (Just "batch-3")
-  --           ]
-
-  -- forM_ errs (print . snd)
-
   putStrLn "Thank you."
   return $ Right ()
 
